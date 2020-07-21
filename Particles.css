@@ -1,0 +1,596 @@
+*{
+    margin:0;
+    padding: 0;
+
+}
+html{
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+   scroll-snap-align: center;
+   
+}
+#id{
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	scroll-snap-align: center;
+}
+body{
+    background-color: black;
+    /**
+    background-image: url("bunt.jpg");
+    background-image: linear-gradient(132.9377574945314deg, rgba(8, 1, 23,1) 30.341766919095093%,rgba(34, 27, 47,1) 30.341766919095093%,rgba(242, 240, 247,1) 30.440666339148773%,rgba(0, 0, 0,1) 30.490116049175615%,#011710 32.97908478719325%)
+    ;
+    transition: background-color .5s;
+    background-size: cover;**/
+   
+    }
+
+
+@font-face{
+  font-family: UbuntuCondensed-Regular;
+  src: url(UbuntuCondensed-Regular.ttf);
+}
+@font-face{
+  font-family: "Montserrat-Light";
+  src: url(Montserrat-Light.ttf);
+}
+
+.background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 700px;
+  /**background-image: linear-gradient(132.9377574945314deg, #080117 30.341766919095093%,rgba(34, 27, 47,1) 30.341766919095093%,rgba(242, 240, 247,1) 30.440666339148773%,rgba(0, 0, 0,1) 30.490116049175615%,#011710 32.97908478719325%);
+   **/
+   background-image: url("tirkizna.jpg");
+    transition: background-color .5s;
+    background-size: cover;
+    box-shadow: 0px 15px 25px 15px  rgba(0,0,0,0.9) inset;
+    z-index: -2;
+    
+}
+/***********  texts  **********/
+
+.naslov {
+    position: absolute;
+    top: 750px;
+    left: 100px;
+    color:white;
+    font-size: 5vw;
+    letter-spacing: 4px;
+    font-variant: small-caps;
+    font-family: UbuntuCondensed-Regular;
+}
+
+.naslov2 {
+  position: absolute;
+  top: 1850px;
+  left: 100px;
+  float: left;
+
+  color:white;
+  font-size: 5vw;
+  z-index: 1;
+  letter-spacing: 4px;
+  font-variant: small-caps;
+  font-weight: bolder;
+  font-family: UbuntuCondensed-Regular;
+}
+.naslov3, .client1{
+  position: absolute;
+  top: 1500px;
+  left: 50px;
+  float: left;
+  color:white;
+  font-size: 5vw;
+  z-index: 100;
+  letter-spacing: 4px;
+  font-variant: small-caps;
+  font-weight: bolder;
+  font-family: UbuntuCondensed-Regular;
+}
+
+/***** video *****/
+video {
+       position: relative;
+       top:500px;
+       left:0px;
+       width: 1287px; 
+       height: 800px;
+       overflow-x: hidden; 
+       z-index: -10;
+      }
+/****** AOS library  *******/
+section{
+	position: relative;
+	width: 99%;
+  height: 98%;
+  overflow: hidden;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding-top: 20px;
+	
+}
+
+
+/**** SIDE NAV MENU  ***/
+.sidenav {
+  height: 100%;
+  width: 0%;
+  position: fixed;
+  top: 0;
+  left:0px;
+  background-color:#011710;
+  overflow-x: hidden; /*** key code ***/
+  transition: 0.5s;   /** key code **/
+  padding-top: 15px;
+  z-index: 10;
+  opacity: 0.4;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.9);
+}
+
+
+.sidenav a {
+  
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: grey;
+  display: block; /*** key code  ****/
+  transition: 0.3s; /**** key code ****/
+  font-family: UbuntuCondensed-Regular;
+
+}
+
+.sidenav a:hover {
+  color:white;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 0px;
+}
+
+#main {
+  position: fixed;
+  transition: margin-left .5s; /*** key code ***/
+  padding: 26px;
+  color: white;
+  font-family: UbuntuCondensed-Regular;
+  z-index: 1;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}   
+
+/**** FLIP TEXT  OPTION ****/
+
+.a{
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  width: 305px;/****/
+  height: 40px;/*****/
+  line-height: 41px;/****/
+  overflow:hidden ;/** the last **/
+  color: white;
+  font-size: 50px;
+  font-family: UbuntuCondensed-Regular;
+}
+
+.a span{
+  display: inline-block;
+  transition: 0.2s;
+
+}
+.a span:nth-child(odd):before{
+  content: attr(data-text);
+  position: absolute;
+  transform: translateY(100%);
+
+}
+.a span:nth-child(odd){
+  transform: translateY(-100%);
+}
+.a:hover span:nth-child(odd){
+  transform: translateY(0%);
+
+}
+
+.a span:nth-child(even):before{
+  content: attr(data-text);
+  position: absolute;
+  transform: translateY(100%);
+
+}
+.a span:nth-child(even){
+  transform: translateY(-100%);
+}
+.a:hover span:nth-child(even){
+  transform: translateY(0%);
+
+}
+
+/*** are  ***/
+
+.aa{
+  position: absolute;
+  top: 250px;
+  left: 200px;
+  width: 100px;/****/
+  height: 30px;/*****/
+  line-height: 30px;/****/
+  overflow:hidden ;/** the last **/
+  color: black;
+  font-size: 40px;
+  font-family: UbuntuCondensed-Regular;
+}
+
+.aa span{
+  display: inline-block;
+  transition: 0.2s;
+
+}
+.aa span:nth-child(odd):before{
+  content: attr(data-text);
+  position: absolute;
+  transform: translateY(100%);
+
+}
+.aa span:nth-child(odd){
+  transform: translateY(-100%);
+}
+.aa:hover span:nth-child(odd){
+  transform: translateY(0%);
+
+}
+
+.aa span:nth-child(even):before{
+  content: attr(data-text);
+  position: absolute;
+  transform: translateY(100%);
+
+}
+.aa span:nth-child(even){
+  transform: translateY(-100%);
+}
+.aa:hover span:nth-child(even){
+  transform: translateY(0%);
+
+}
+
+/*** upside ***/
+
+.aaa{
+  position: absolute;
+  top: 290px;
+  left: 200px;
+  width: 200px;/****/
+  height: 32px;/*****/
+  line-height: 33px;/****/
+  overflow:hidden ;/** the last **/
+  color: white;
+  font-size: 30px;
+  font-family: UbuntuCondensed-Regular;
+
+}
+
+.aaa span{
+  display: inline-block;
+  transition: 0.2s;
+
+}
+.aaa span:nth-child(odd):before{
+  content: attr(data-text);
+  position: absolute;
+  transform: translateY(100%);
+
+}
+.aaa span:nth-child(odd){
+  transform: translateY(-100%);
+}
+.aaa:hover span:nth-child(odd){
+  transform: translateY(0%);
+
+}
+
+.aaa span:nth-child(even):before{
+  content: attr(data-text);
+  position: absolute;
+  transform: translateY(100%);
+
+}
+.aaa span:nth-child(even){
+  transform: translateY(-100%);
+}
+.aaa:hover span:nth-child(even){
+  transform: translateY(0%);
+
+}
+/**** aos img  *****/
+
+img{
+  position: relative;
+  top: 20px;
+  left: 650px;
+  width: 700px;
+  height: 400px;
+  opacity: 0.9;
+  z-index: -1;
+}
+.img2{
+  position: relative;
+  top: 20px;
+  left: 50px;
+  width: 600px;
+  height: 400px;
+  opacity: 0.9;
+  z-index: -1;
+}
+
+.img3{
+  position: relative;
+  top: 1780px;
+  left: 50px;
+
+  width: 230px;
+  height: 200px;
+  opacity: 0.9;
+}
+.img4{
+  position: relative;
+  top: 1780px;
+  left: 200px;
+
+  width: 290px;
+  height: 200px;
+  opacity: 0.9;
+}
+.img5{
+  position: relative;
+  top: 1780px;
+  left: 400px;
+
+  width: 200px;
+  height: 180px;
+  opacity: 0.9;
+}
+
+/***  h6 texts and pasuses ****/
+p{position: absolute;
+  top: 850px;
+  left: 135px;
+  color:white;
+  font-size: 1.2vw;
+  max-width: 500px;
+  line-height: 22px;
+  font-weight: lighter;
+  letter-spacing: 2px;
+
+  font-family: "Montserrat-Light";
+}
+
+.p2{
+  position: relative;
+  top: -330px;
+  left: 695px;
+  color:white;
+  font-size: 1.2vw;
+  max-width: 500px;
+  line-height: 22px;
+  font-weight: lighter;
+  letter-spacing: 2px;
+
+  font-family: "Montserrat-Light";
+}
+.p3{
+  position: relative;
+  top: 110px;
+  left: 135px;
+  max-width:900px;
+  color:white;
+  font-size: 1.2vw;
+  line-height: 22px;
+  font-weight: lighter;
+  letter-spacing: 2px;
+
+  font-family: "Montserrat-Light";
+
+}
+
+
+/****  cards ****/
+.row{
+margin:145px;
+padding-top: 190px;
+}
+.row::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+.column{
+float: left;
+width:18%;
+padding:0 76px; /*** space between cards***/
+}
+@media screen(max-width:600px;){
+  .column{
+    width: 100%;
+    display: block;
+  }
+}
+.card{
+  text-align: center;
+  height: 300px;
+  color: azure;
+  font-size: 20px;
+  padding-top: 40px;
+  box-sizing: border-box;
+  box-shadow: 0 5px 10px 5px rgb(1, 23, 16);
+  font-family: "Montserrat-Light";
+
+  background-image:linear-gradient(45deg, rgba(1, 14, 9, 0.904)15%, rgb(0, 0, 0)75%);
+  background-size: 300%;
+  animation-name: Gradient;
+  animation-duration: 15s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite; 
+  animation-direction: normal;
+  animation-play-state: running;
+  animation-fill-mode: none;
+
+}
+@keyframes Gradient{
+  0%{background-position: 0% 50%;}
+  50%{background-position: 100% 50%;}
+  100%{background-position: 0% 50%;}
+}
+.fa-compress-alt,  .fa-project-diagram, .fa-qrcode{
+  font-size: 60px;
+  padding-top: 40px;
+
+}
+
+/*************    quote after video  *****************/
+.quotepicture{
+  position: relative;
+  top:-156px;
+  left:0 ;
+  width: 100%;
+  height: 300px;
+  color: antiquewhite;
+  background-size: cover;
+  object-fit:cover;
+  opacity: 0.2;
+  background-image: url("bunt.jpg");
+}
+
+.quote, h6{
+  position: absolute;
+  top: 90px;
+  left: 50px;
+  transform: translate(5%, 40%);
+  color: azure;
+  opacity: 1;
+  font-family: "Montserrat-Light";
+
+}
+
+
+/********* ** CONTACT FORM ** **********/
+
+input  [type="text"], select, textarea, input{
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  background-color:#011710;
+  padding: 10px;
+  margin: 8px;
+  color: white;
+  border: none;
+
+  transition: 1s;
+}
+
+input  [type="submit"]{
+border: navajowhite;
+background-color: #011710;
+
+}
+
+input[type=submit]:hover {
+opacity: 0.6;
+}
+
+.contact{
+  color: white;
+  position: relative;
+  top: 520px;
+  left: 200px;
+  max-width: 400px;
+  max-height: 300px;
+  padding-bottom:20px ;
+
+  letter-spacing: 4px;
+  font-variant: small-caps;
+  font-size: 2vw;
+  font-family: "Montserrat-Light";
+}
+
+/****  *to top*   **/
+.fa-arrow-circle-up{
+  position: fixed;
+  bottom:10px;
+  right: 20px;
+  font-size: 30px;
+  color: rgb(8, 170, 170);
+  transition:1s;
+}
+.fa-arrow-circle-up:hover{
+text-shadow:0 0 5px white,
+            0 0 15px white,
+            0 0 20px white,
+            0 0 25px white ;
+}
+
+/***** social media   ****/
+
+.socmedia{
+  position: absolute;
+  top: 4450px;
+  left:750px;
+  color: azure;
+  font-size: 20px;
+  margin:10px;
+
+}
+
+.fa-facebook-f{
+  color: azure;
+  margin:10px;
+}
+.fa-facebook-f:hover{
+  color:#4267B2; 
+  cursor: pointer;
+}
+.fa-linkedin-in{
+  color: azure;
+  margin:10px;
+}
+.fa-linkedin-in:hover{
+  color:#2867B2;
+  cursor: pointer;
+}
+.fa-behance{
+  color: azure;
+  margin:10px;
+}
+.fa-behance:hover{
+  color:#053eff;
+}
+.fa-dribbble{
+  color: azure;
+  margin:10px;
+
+}
+.fa-dribbble:hover{
+  color:#ea4c89;
+  cursor: pointer;
+}
+.fa-instagram{
+  color: azure;
+  margin:10px;
+}
+.fa-instagram:hover{
+  color: #C13584;
+  cursor: pointer;
+}
